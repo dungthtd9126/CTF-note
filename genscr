@@ -1,0 +1,63 @@
+#!/usr/bin/python3
+
+import sys, os
+
+script = f'''#!/usr/bin/env python3
+
+from pwn import *
+
+# exe = ELF('', checksec=False)
+# libc = ELF('', checksec=False)
+context.binary = exe
+
+info = lambda msg: log.info(msg)
+s = lambda data, proc=None: proc.send(data) if proc else p.send(data)
+sa = lambda msg, data, proc=None: proc.sendafter(msg, data) if proc else p.sendafter(msg, data)
+sl = lambda data, proc=None: proc.sendline(data) if proc else p.sendline(data)
+sla = lambda msg, data, proc=None: proc.sendlineafter(msg, data) if proc else p.sendlineafter(msg, data)
+sn = lambda num, proc=None: proc.send(str(num).encode()) if proc else p.send(str(num).encode())
+sna = lambda msg, num, proc=None: proc.sendafter(msg, str(num).encode()) if proc else p.sendafter(msg, str(num).encode())
+sln = lambda num, proc=None: proc.sendline(str(num).encode()) if proc else p.sendline(str(num).encode())
+slna = lambda msg, num, proc=None: proc.sendlineafter(msg, str(num).encode()) if proc else p.sendlineafter(msg, str(num).encode())
+def GDB():
+    if not args.REMOTE:
+        gdb.attach(p, gdbscript=\'\'\'
+
+
+        c
+        \'\'\')
+        sleep(1)
+
+
+if args.REMOTE:
+    p = remote('')
+else:
+    {('p = process([exe.path])') if len(sys.argv) >= 2 else ("p = process([''])")}
+GDB()
+
+
+
+p.interactive()
+'''
+
+if os.path.exists('solve.py'):
+    script = open('solve.py', 'r').read()
+
+if len(sys.argv) <= 1:
+    print(f"Usage: {sys.argv[0]} BIN [LIBC]")
+    print(f"Example:")
+    print(f"    {sys.argv[0]} ./chall")
+    print(f"    {sys.argv[0]} ./chall ./libc.so.6")
+    exit(0)
+if len(sys.argv) > 1:
+    os.system('chmod +x ' + sys.argv[1])
+    script = script.replace("# exe = ELF('', checksec=False)", f"exe = ELF('{sys.argv[1]}', checksec=False)")
+if len(sys.argv) > 2:
+    os.system('chmod +x ' + sys.argv[2])
+    script = script.replace("# libc = ELF('', checksec=False)", f"libc = ELF('{sys.argv[2]}', checksec=False)")
+
+with open('solve.py', 'wt') as f:
+    f.write(script)
+
+os.chmod('solve.py', 0o755)
+os.system('code solve.py &')
