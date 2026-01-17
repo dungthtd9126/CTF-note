@@ -5,3 +5,9 @@
 
 ## update all packages
 - paru -Syu
+
+## firejail 
+- firejail --private ./your_exploit_binary
+
+## scan virus
+- clamscan -r ~/Downloads
