@@ -5,9 +5,11 @@ import sys, os
 script = f'''#!/usr/bin/env python3
 
 from pwn import *
+# set terminal type based on choice 
+context.terminal = ["foot", "-e", "sh", "-c"]
 
 # exe = ELF('', checksec=False)
-# libc = ELF('', checksec=False)
+# libc = ELF('libc.so.6', checksec=False)
 context.binary = exe
 
 info = lambda msg: log.info(msg)
