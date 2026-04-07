@@ -1,4 +1,7 @@
 # CTF-note
+## enter daila env
+- source daila_env/bin/activate
+
 ## set visualize max chunk size
 - set max-visualize-chunk-size 0x500
 
