@@ -1,4 +1,6 @@
 # CTF-note
+## Modify partition and disk space
+- sudo gparted &
 ## enter daila env
 - source daila_env/bin/activate
 
