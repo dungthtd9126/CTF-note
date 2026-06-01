@@ -11,6 +11,16 @@ git remote add origin https://github.com/dungthtd9126/CTF-event.git
 
 - **[https://github.com/dungthtd9126/CTF-event.git](https://github.com/dungthtd9126/CTF-event.git)**: This is the exact destination URL being attached to the nickname "origin".
 
+Update tracking file / folder
+```
+git add .
+```
+
+Push changes to github
+```
+git push origin master
+```
+
 ## Modify partition and disk space
 - sudo gparted &
 ## enter daila env
