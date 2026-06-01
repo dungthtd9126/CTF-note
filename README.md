@@ -1,4 +1,11 @@
 # CTF-note
+## github command
+
+Connect local terminal to github for remote updates:
+```bash
+git remote add origin https://github.com/dungthtd9126/CTF-event.git
+```
+
 ## Modify partition and disk space
 - sudo gparted &
 ## enter daila env
