@@ -20,6 +20,11 @@ Push changes to github
 ```
 git push origin master
 ```
+- **git push**: The action ("Upload my local saves...")
+
+- **origin**: The destination ("...to the remote GitHub server we nicknamed 'origin'...")
+
+- **master**: The specific data to send ("...and specifically upload the timeline of code I have on my master branch.")
 
 ## Modify partition and disk space
 - sudo gparted &
