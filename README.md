@@ -45,3 +45,6 @@ git push origin master
 
 ## scan virus
 - clamscan -r ~/Downloads
+
+## Clear all images and containers
+- **docker system prune -a --volumes**
