@@ -47,4 +47,4 @@ git push origin master
 - clamscan -r ~/Downloads
 
 ## Clear all images and containers
-- **docker system prune -a --volumes**
+```docker system prune -a --volumes```
