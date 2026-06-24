@@ -27,25 +27,36 @@ git push origin master
 - **master**: The specific data to send ("...and specifically upload the timeline of code I have on my master branch.")
 
 ## Modify partition and disk space
-- sudo gparted &
+```
+ sudo gparted &
+```
 ## enter daila env
-- source daila_env/bin/activate
+```
+source daila_env/bin/activate
+```
 
 ## set visualize max chunk size
-- set max-visualize-chunk-size 0x500
+```
+set max-visualize-chunk-size 0x500
+```
 
 ## Unikey tool on arch
-- Enable unikey arch tool: fcitx5-configtool
-
+```
+Enable unikey arch tool: fcitx5-configtool
+```
 ## update all packages
-- paru -Syu
+```
+paru -Syu
+```
 
 ## firejail 
-- firejail --private ./your_exploit_binary
-
+```
+firejail --private ./your_exploit_binary
+```
 ## scan virus
-- clamscan -r ~/Downloads
-
+```
+clamscan -r ~/Downloads
+```
 ## Clear all images and containers
 ```
 docker system prune -a --volumes
