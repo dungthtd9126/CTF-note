@@ -4,37 +4,57 @@
 ```c
 struct _IO_FILE
 {
-  int _flags;		/* High-order word is _IO_MAGIC; rest is flags. */
+  int _flags;                    // 0x00
+                                  /* High-order word is _IO_MAGIC; rest is flags. */
+  /* padding */                   // 0x04 - 0x07
 
   /* The following pointers correspond to the C++ streambuf protocol. */
-  char *_IO_read_ptr;	/* Current read pointer */
-  char *_IO_read_end;	/* End of get area. */
-  char *_IO_read_base;	/* Start of putback+get area. */
-  char *_IO_write_base;	/* Start of put area. */
-  char *_IO_write_ptr;	/* Current put pointer. */
-  char *_IO_write_end;	/* End of put area. */
-  char *_IO_buf_base;	/* Start of reserve area. */
-  char *_IO_buf_end;	/* End of reserve area. */
+  char *_IO_read_ptr;             // 0x08
+                                  /* Current read pointer */
+  char *_IO_read_end;             // 0x10
+                                  /* End of get area. */
+  char *_IO_read_base;            // 0x18
+                                  /* Start of putback+get area. */
+
+  char *_IO_write_base;           // 0x20
+                                  /* Start of put area. */
+  char *_IO_write_ptr;            // 0x28
+                                  /* Current put pointer. */
+  char *_IO_write_end;            // 0x30
+                                  /* End of put area. */
+
+  char *_IO_buf_base;             // 0x38
+                                  /* Start of reserve area. */
+  char *_IO_buf_end;              // 0x40
+                                  /* End of reserve area. */
 
   /* The following fields are used to support backing up and undo. */
-  char *_IO_save_base; /* Pointer to start of non-current get area. */
-  char *_IO_backup_base;  /* Pointer to first valid character of backup area */
-  char *_IO_save_end; /* Pointer to end of non-current get area. */
+  char *_IO_save_base;            // 0x48
+                                  /* Pointer to start of non-current get area. */
+  char *_IO_backup_base;          // 0x50
+                                  /* Pointer to first valid character of backup area */
+  char *_IO_save_end;             // 0x58
+                                  /* Pointer to end of non-current get area. */
 
-  struct _IO_marker *_markers;
+  struct _IO_marker *_markers;    // 0x60
 
-  struct _IO_FILE *_chain;
+  struct _IO_FILE *_chain;        // 0x68
 
-  int _fileno;
-  int _flags2;
-  __off_t _old_offset; /* This used to be _offset but it's too small.  */
+  int _fileno;                    // 0x70
+  int _flags2;                    // 0x74
+
+  __off_t _old_offset;            // 0x78
+                                  /* This used to be _offset but it's too small. */
 
   /* 1+column number of pbase(); 0 is unknown. */
-  unsigned short _cur_column;
-  signed char _vtable_offset;
-  char _shortbuf[1];
+  unsigned short _cur_column;     // 0x80
+  signed char _vtable_offset;     // 0x82
+  char _shortbuf[1];              // 0x83
 
-  _IO_lock_t *_lock;
+  /* padding */                   // 0x84 - 0x87
+
+  _IO_lock_t *_lock;              // 0x88
+
 #ifdef _IO_USE_OLD_IO_FILE
 };
 ```
