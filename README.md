@@ -59,6 +59,36 @@ struct _IO_FILE
 };
 ```
 
+### Flag bits
+```c
+/* Magic numbers and bits for the _flags field.
+   The magic numbers use the high-order bits of _flags;
+   the remaining bits are available for variable flags.
+   Note: The magic numbers must all be negative if stdio
+   emulation is desired. */
+
+#define _IO_MAGIC              0xFBAD0000  /* Magic number */
+#define _OLD_STDIO_MAGIC       0xFABC0000  /* Emulate old stdio. */
+#define _IO_MAGIC_MASK         0xFFFF0000
+
+#define _IO_USER_BUF           0x0001      /* User owns buffer; don't delete it on close. */
+#define _IO_UNBUFFERED         0x0002
+#define _IO_NO_READS           0x0004      /* Reading not allowed */
+#define _IO_NO_WRITES          0x0008      /* Writing not allowed */
+#define _IO_EOF_SEEN           0x0010
+#define _IO_ERR_SEEN           0x0020
+#define _IO_DELETE_DONT_CLOSE  0x0040      /* Don't call close(_fileno) on cleanup. */
+#define _IO_LINKED             0x0080      /* Set if linked using _chain to _IO_list_all. */
+#define _IO_IN_BACKUP          0x0100
+#define _IO_LINE_BUF           0x0200
+#define _IO_TIED_PUT_GET       0x0400      /* Put and get pointer logic tied. */
+#define _IO_CURRENTLY_PUTTING  0x0800
+#define _IO_IS_APPENDING       0x1000
+#define _IO_IS_FILEBUF         0x2000
+#define _IO_BAD_SEEN           0x4000
+#define _IO_USER_LOCK          0x8000
+```
+
 ## github command
 
 Connect local terminal to github for remote updates:
