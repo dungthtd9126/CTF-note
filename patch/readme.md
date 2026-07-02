@@ -23,9 +23,11 @@ You can get libs folder by copy from container to local and rename it as **libs*
 - In my case, copy all files in folder **/lib/x86_64-linux-gnu**
 
 Use this script when pwninit got errors with library files
+
 Example:
 ```python
  @ctf ldd challenge_patched
+
 ./challenge_patched: ././libs/libc.so.6: version `GLIBC_ABI_DT_X86_64_PLT' not found (required by /usr/lib/librt.so.1)
 ./challenge_patched: ././libs/libc.so.6: version `GLIBC_ABI_DT_RELR' not found (required by /usr/lib/librt.so.1)
 	linux-vdso.so.1 (0x00007fe0e1dca000)
