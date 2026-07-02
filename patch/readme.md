@@ -1,6 +1,6 @@
 # Patch script
 
-**This is in development. If you have any suggestions, try contact wtih me**
+**This is in development. If you have any suggestions, try contact with me :)**
 
 I used AI to gen this script so it may unstable
 
