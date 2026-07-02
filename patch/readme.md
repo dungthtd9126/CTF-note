@@ -18,7 +18,7 @@ RPATH:       /home/ctf/libs
 Usage:
 Automatically patch a given **binary_file** with existed folder **libs** that contain all neccessary files to patch
 
-You can get libs folder by copy from container to local and rename it as **libs**
+You can get libs folder by copy from **container** to **local** and rename it as **libs**
 
 - In my case, copy all files in folder **/lib/x86_64-linux-gnu**
 
