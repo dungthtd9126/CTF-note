@@ -22,6 +22,8 @@ You can get libs folder by copy from **container** to **local** and rename it as
 
 - In my case, copy all files in folder **/lib/x86_64-linux-gnu**
 
+	- If you do that, I recommend you convert libc.so.6 file inside that folder to a symlink with given libc (if has) by the author for absolutely correct libc file
+
 Use this script when pwninit got errors with library files
 
 Example:
@@ -35,3 +37,4 @@ Example:
 	librt.so.1 => /usr/lib/librt.so.1 (0x00007fe0e1d91000)
 	./ld-2.27.so => /usr/lib64/ld-linux-x86-64.so.2 (0x00007fe0e1dcc000)
 ```
+
