@@ -28,3 +28,34 @@ git remote add origin <PASTE_YOUR_GITHUB_REPOSITORY_URL>
 ```
 git push -u origin main
 ```
+# Update repo after changes
+- Check stauts:
+```
+git status
+```
+- Update current changes in local
+```
+git add .
+```
+- commit on main git
+```
+git commmit -m "add changes"
+```
+# Track large files by lfs extension (file > 50mb)
+Example:
+```c
+git lfs track "*.tar.gz"
+git add .gitattributes
+```
+Then commit those change
+
+- Install extension:
+```
+https://git-lfs.com/
+```
+Then extract the tar file and run:
+```c
+cd git-lfs-3.7.1 // current version when I install it
+sudo ./install.sh // Because it use commit changes in /usr/local
+```
+
