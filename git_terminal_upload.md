@@ -58,4 +58,7 @@ Then extract the tar file and run:
 cd git-lfs-3.7.1 // current version when I install it
 sudo ./install.sh // Because it use commit changes in /usr/local
 ```
-
+# Exclude a folder when add changes
+```c
+git add . ":!folder_name"
+```
