@@ -76,3 +76,8 @@ To permanently ignore a `folder / file`, use `.gitignore`:
 LK01/
 LK01-2/qemu/rootfs/
 ```
+# Force overwrite / append differs on remote git  
+Force overwrite differs:
+```c
+git push --force origin main
+```
