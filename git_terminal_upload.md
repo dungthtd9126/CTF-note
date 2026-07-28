@@ -62,3 +62,17 @@ sudo ./install.sh // Because it use commit changes in /usr/local
 ```c
 git add . ":!folder_name"
 ```
+Untrack directories:
+```c
+git rm -r --cached LK01
+git rm -r --cached LK01-2/qemu/rootfs
+```
+Expected output:
+<img width="925" height="423" alt="image" src="https://github.com/user-attachments/assets/d94a661c-39b8-4f38-96a2-22a3000c0403" />
+
+To permanently ignore a `folder / file`, use `.gitignore`:
+```c
+ @saitomu  cat .gitignore
+LK01/
+LK01-2/qemu/rootfs/
+```
