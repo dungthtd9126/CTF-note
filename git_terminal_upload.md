@@ -24,6 +24,8 @@ git branch -M main
 ```
 git remote add origin <PASTE_YOUR_GITHUB_REPOSITORY_URL>
 ```
+> `GITHUB_REPOSITORY_URL` must be created or existed in your github account to be able to get link
+
 6. Push your local 'main' branch up to GitHub
 ```
 git push -u origin main
