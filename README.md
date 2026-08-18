@@ -1,5 +1,9 @@
 # CTF-note
 
+## See disk space usage
+```
+df -h
+```
 ## File structure
 ```c
 struct _IO_FILE_complete
