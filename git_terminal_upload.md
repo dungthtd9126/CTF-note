@@ -83,3 +83,14 @@ Force overwrite differs:
 ```c
 git push --force origin main
 ```
+# Download remote changes to local
+```c
+git pull --rebase origin main
+```
+- Expected output:
+```
+ @saitomu git pull --rebase origin main
+From https://github.com/dungthtd9126/write-up
+ * branch            main       -> FETCH_HEAD
+Successfully rebased and updated refs/heads/main.
+```
