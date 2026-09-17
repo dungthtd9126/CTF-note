@@ -87,6 +87,7 @@ git push --force origin main
 ```c
 git pull --rebase origin main
 ```
+# 
 - Expected output:
 ```
  @saitomu git pull --rebase origin main
@@ -94,3 +95,20 @@ From https://github.com/dungthtd9126/write-up
  * branch            main       -> FETCH_HEAD
 Successfully rebased and updated refs/heads/main.
 ```
+# Search key word through patch history
+- First clone the repo to local.
+
+• Then Command:
+```c
+ git log --all -p -S'@EnabledAfter(targetSdkVersion = Build.VERSION_CODES.BAKLAVA)'
+```
+ Components:
+
+ - git — Git version-control tool.
+ - log — show commit history.
+ - --all — search commits reachable from all local branches, tags, and remotes.
+ - -p — show each matching commit’s patch/diff.
+ - -S'...' — Git “pickaxe” search. Finds commits where the exact string was added or removed.
+ - '...' — shell quotes. Keeps the Java annotation as one literal argument; the text is not executed.
+ - @EnabledAfter(...) — Java source text being searched.
+ - No path argument — searches the entire repository.
