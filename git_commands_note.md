@@ -112,3 +112,8 @@ Successfully rebased and updated refs/heads/main.
  - '...' — shell quotes. Keeps the Java annotation as one literal argument; the text is not executed.
  - @EnabledAfter(...) — Java source text being searched.
  - No path argument — searches the entire repository.
+# Switch local repo to old commit
+```c
+git switch --detach <COMMIT_HASH>
+```
+> --detach means HEAD points directly to the commit, not a branch
