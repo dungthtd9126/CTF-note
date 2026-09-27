@@ -169,3 +169,5 @@ clamscan -r ~/Downloads
 ```
 docker system prune -a --volumes
 ```
+# Visual studio code note
+`Ctrl+shift+f`: Find specified keywords inside opened folder
