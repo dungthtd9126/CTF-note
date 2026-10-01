@@ -58,3 +58,25 @@ nvme0n1p3 ext4   1.0   D-harddisk2 target_UID  623.6G     2%        /home/saitom
 
 ## One boot
 > No idea
+
+# swap 
+```c
+✘  Thu  1 Oct - 09:59  ~/workspace/main 
+@saitomu  sudo fallocate -l 32G /home/saitomu/workspace/swapfile
+
+Thu  1 Oct - 10:00  ~/workspace/main 
+@saitomu  sudo chmod 600 /home/saitomu/workspace/swapfile
+
+Thu  1 Oct - 10:01  ~/workspace/main 
+@saitomu  sudo mkswap /home/saitomu/workspace/swapfile
+Setting up swapspace version 1, size = 32 GiB (34359734272 bytes)
+no label, UUID=d3ab3877-794f-4099-b873-abd054b27439
+
+Thu  1 Oct - 10:01  ~/workspace/main 
+@saitomu  sudo swapon /home/saitomu/workspace/swapfile
+
+Thu  1 Oct - 10:01  ~/workspace/main 
+@saitomu  swapon --show                               
+NAME                             TYPE SIZE USED PRIO
+/home/saitomu/workspace/swapfile file  32G 133M   -1
+```
